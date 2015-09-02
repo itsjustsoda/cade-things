@@ -1,0 +1,40 @@
+# Append this to your ~/.ssh/config file and you'll be to quickly ssh into a 
+# CADE machine by typing: 
+#
+#   > ssh lab1 ---- or lab2 or cade
+#
+#
+# This is assuming you have a ssh keypair named 'cade' and 'cade.pub' in your 
+# .ssh folder.
+#
+# You can generate a pair using:
+#
+#   > ssh-keygen -t ed25519 -f ~/.ssh/cade -q -N "passphrase"
+#                                                     |
+#          Can be "" if you don't want a passphrase --+
+#
+#
+# Afterwards, you'll need to install the keys to the CADE machines.
+# This will add your key to the list of authorized keys on CADE allowing you
+# to log in without having to type in your password.
+#
+#   > ssh-copy-id -i ~/.ssh/cade cadelogin@lab1-1.eng.utah.edu
+#
+#
+# The CADE machines I've picked are arbitrary. You can choose different 
+# machines if you want. The list of all the CADE machines is available at:
+#
+#   https://www.eng.utah.edu/labstatus/
+#
+#
+# TODO: Create interactive script to do this
+
+Host cade lab1
+Hostname lab1-1.eng.utah.edu
+    IdentityFile ~/.ssh/cade
+    User cadelogin
+
+Host lab2
+Hostname lab2-2.eng.utah.edu
+    IdentityFile ~/.ssh/cade
+    User cadelogin
