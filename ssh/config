@@ -27,7 +27,19 @@
 #   https://www.eng.utah.edu/labstatus/
 #
 #
-# TODO: Create interactive script to do this
+# Be sure to change 'cadelogin' your CADE login and change the Hostnames to your
+# favorite machine in each lab. Once you're ready, make sure your terminal is 
+# in the same directory as this file and then use the following to append it 
+# to your ~/.ssh/config:
+#
+#   > grep -v "^#" config >> ~/.ssh/config
+#
+#     |          |
+#     +----------+-- This will strip these comments when this file is appended 
+#                    to your config.
+#
+#
+# TODO: Create an interactive script to do this.
 
 Host cade lab1
 Hostname lab1-1.eng.utah.edu
